@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">My Application</string>
+        <string-array name="genero_options">
+            <item>Masculino</item>
+            <item>Femenino</item>
+        </string-array>
+
+        <string-array name="actividad_options">
+            <item>Sedentario</item>
+            <item>Ligera actividad</item>
+            <item>Actividad moderada</item>
+            <item>Actividad intensa</item>
+        </string-array>
+
+        <string-array name="objetivo_options">
+            <item>Subir de peso</item>
+            <item>Bajar de peso</item>
+            <item>Mantener peso</item>
+        </string-array>
+</resources>

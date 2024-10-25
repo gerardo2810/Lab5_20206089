@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ComidasActivity">
+
+    <EditText
+        android:id="@+id/et_nombre_comida"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Nombre de la comida"
+        android:inputType="text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/et_calorias_comida"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Calorías"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/et_nombre_comida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btn_añadir_comida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Añadir comida"
+        app:layout_constraintTop_toBottomOf="@id/et_calorias_comida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_calorias_consumidas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calorías consumidas hoy: 0"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_añadir_comida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
