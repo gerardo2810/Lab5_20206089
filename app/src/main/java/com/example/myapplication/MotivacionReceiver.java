@@ -19,16 +19,13 @@ public class MotivacionReceiver extends BroadcastReceiver {
         // Verificar permiso de notificación
         if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.POST_NOTIFICATIONS)
                 == PackageManager.PERMISSION_GRANTED) {
-            // Crear y mostrar la notificación
             mostrarNotificacion(context);
         } else {
-            // Manejo de permiso denegado o no otorgado
             System.out.println("Permiso de notificación no otorgado.");
         }
     }
 
     private void mostrarNotificacion(Context context) {
-        // Crear el canal de notificación si es necesario (para Android 8.0 y versiones superiores)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence nombre = "Canal de Motivación";
             String descripcion = "Recordatorio de motivación para mantener el objetivo";
@@ -42,7 +39,6 @@ public class MotivacionReceiver extends BroadcastReceiver {
             }
         }
 
-        // Crear la notificación
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.baseline_circle_notifications_24) // Cambia al icono que uses
                 .setContentTitle("¡Sigue adelante!")
@@ -52,11 +48,9 @@ public class MotivacionReceiver extends BroadcastReceiver {
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
-        // Mostrar la notificación con un ID único
         try {
             notificationManager.notify(3001, builder.build());
         } catch (SecurityException e) {
-            // Manejar SecurityException en caso de que el permiso no esté disponible
             e.printStackTrace();
             System.out.println("Error: No se pudieron enviar las notificaciones debido a la falta de permisos.");
         }

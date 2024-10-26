@@ -13,7 +13,6 @@ public class RecordatorioReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String mensaje = intent.getStringExtra("mensaje");
 
-        // Verificar permiso de notificaciones
         if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.POST_NOTIFICATIONS)
                 == PackageManager.PERMISSION_GRANTED) {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "RECORDATORIOS")

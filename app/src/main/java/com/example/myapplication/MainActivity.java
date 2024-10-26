@@ -24,10 +24,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Inicializar el botón de bienvenida
         Button btnIrPerfil = findViewById(R.id.btn_ir_perfil);
 
-        // Configurar el botón para abrir la actividad de PerfilActivity
         btnIrPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
             startActivity(intent);

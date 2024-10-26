@@ -41,25 +41,20 @@ public class ComidasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comidas);
 
-        // Obtener el valor de calorías recomendadas del intent
         caloriasRecomendadas = getIntent().getIntExtra("CALORIAS_RECOMENDADAS", 0);
 
-        // Inicializar vistas
         caloriasRecomendadasTextView = findViewById(R.id.tv_calorias_recomendadas);
         caloriasRestantesTextView = findViewById(R.id.tv_calorias_restantes);
         caloriasConsumidasTextView = findViewById(R.id.tv_calorias_consumidas);
         caloriasQuemadasTextView = findViewById(R.id.tv_calorias_quemadas);
 
-        // Mostrar calorías recomendadas al iniciar la actividad
         caloriasRecomendadasTextView.setText("Calorías recomendadas: " + (int) caloriasRecomendadas);
         actualizarCaloriasRestantes();
 
-        // Inicialización de vistas adicionales
         EditText nombreComidaEditText = findViewById(R.id.et_nombre_comida);
         EditText caloriasComidaEditText = findViewById(R.id.et_calorias_comida);
         Button añadirComidaButton = findViewById(R.id.btn_añadir_comida);
         Spinner spinnerAlimentos = findViewById(R.id.spinner_alimentos);
-        // Llama al método para configurar los recordatorios
         configurarRecordatoriosDiarios();
         alimentosCatalogo = new HashMap<>();
         alimentosCatalogo.put("Manzana", 95);
@@ -82,7 +77,6 @@ public class ComidasActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                // No hacer nada si no se selecciona un alimento
             }
         });
 
@@ -166,7 +160,6 @@ public class ComidasActivity extends AppCompatActivity {
     private void configurarRecordatoriosDiarios() {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        // Configuración de recordatorio para desayuno (8:00 AM)
         Calendar desayuno = Calendar.getInstance();
         desayuno.set(Calendar.HOUR_OF_DAY, 8);
         desayuno.set(Calendar.MINUTE, 0);
@@ -193,7 +186,7 @@ public class ComidasActivity extends AppCompatActivity {
         intent.putExtra("mensaje", mensaje);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
-        // Configurar la alarma para que se repita todos los días a la hora indicada
+
         if (alarmManager != null) {
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, hora.getTimeInMillis(),
                     AlarmManager.INTERVAL_DAY, pendingIntent);

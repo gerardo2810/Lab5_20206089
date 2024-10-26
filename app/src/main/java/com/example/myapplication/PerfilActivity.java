@@ -34,7 +34,6 @@ public class PerfilActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Inicialización de vistas
         EditText pesoEditText = findViewById(R.id.et_peso);
         EditText alturaEditText = findViewById(R.id.et_altura);
         EditText edadEditText = findViewById(R.id.et_edad);
@@ -47,7 +46,6 @@ public class PerfilActivity extends AppCompatActivity {
         EditText intervaloNotificacionEditText = findViewById(R.id.et_intervalo_notificacion); // Nuevo EditText
         Button activarNotificacionButton = findViewById(R.id.btn_activar_notificacion); // Nuevo botón
 
-        // Configuración de los adaptadores para los Spinners
         ArrayAdapter<CharSequence> generoAdapter = ArrayAdapter.createFromResource(this,
                 R.array.genero_options, android.R.layout.simple_spinner_item);
         generoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -89,7 +87,6 @@ public class PerfilActivity extends AppCompatActivity {
             caloriasCalculadas = true;
         });
 
-        // Configurar el botón para pasar a ComidasActivity y enviar calorías
         btnIrCalorias.setOnClickListener(v -> {
             if (caloriasCalculadas) {
                 Intent intent = new Intent(PerfilActivity.this, ComidasActivity.class);
@@ -100,7 +97,6 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
-        // Configurar la notificación de motivación con el intervalo ingresado
         activarNotificacionButton.setOnClickListener(v -> {
             String intervaloStr = intervaloNotificacionEditText.getText().toString();
             if (!intervaloStr.isEmpty()) {
@@ -113,7 +109,6 @@ public class PerfilActivity extends AppCompatActivity {
         });
     }
 
-    // Método para configurar la notificación de motivación
     private void programarNotificacionMotivacional(int intervaloEnMinutos) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, MotivacionReceiver.class);

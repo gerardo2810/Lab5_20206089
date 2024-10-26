@@ -100,7 +100,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- NUEVO EditText para ingresar el intervalo de la notificación en minutos -->
     <EditText
         android:id="@+id/et_intervalo_notificacion"
         android:layout_width="0dp"
@@ -112,7 +111,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
-    <!-- NUEVO Botón para activar la notificación de motivación -->
     <Button
         android:id="@+id/btn_activar_notificacion"
         android:layout_width="0dp"
