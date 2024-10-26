@@ -89,4 +89,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btn_ir_calorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ir a Comidas"
+        app:layout_constraintTop_toBottomOf="@id/tv_calorias_recomendadas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- NUEVO EditText para ingresar el intervalo de la notificación en minutos -->
+    <EditText
+        android:id="@+id/et_intervalo_notificacion"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Intervalo en minutos para notificación"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/btn_ir_calorias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- NUEVO Botón para activar la notificación de motivación -->
+    <Button
+        android:id="@+id/btn_activar_notificacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Activar Notificación de Motivación"
+        app:layout_constraintTop_toBottomOf="@id/et_intervalo_notificacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

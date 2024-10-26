@@ -51,7 +51,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- NUEVO TextView para mostrar las calorías restantes -->
+    <TextView
+        android:id="@+id/tv_calorias_recomendadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calorías recomendadas: "
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/tv_calorias_consumidas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp" />
+
     <TextView
         android:id="@+id/tv_calorias_restantes"
         android:layout_width="0dp"
@@ -59,21 +69,33 @@
         android:text="Calorías restantes: "
         android:textSize="16sp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_calorias_consumidas"
+        app:layout_constraintTop_toBottomOf="@id/tv_calorias_recomendadas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- NUEVO Spinner para seleccionar alimentos comunes -->
+    <!-- NUEVO TextView para mostrar las calorías quemadas -->
+    <TextView
+        android:id="@+id/tv_calorias_quemadas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calorías quemadas: 0"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_calorias_restantes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Spinner para seleccionar alimentos comunes -->
     <Spinner
         android:id="@+id/spinner_alimentos"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_calorias_restantes"
+        app:layout_constraintTop_toBottomOf="@id/tv_calorias_quemadas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- NUEVO EditText para ingresar actividad física -->
+    <!-- EditText para ingresar actividad física -->
     <EditText
         android:id="@+id/et_actividad_fisica"
         android:layout_width="0dp"
@@ -85,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- NUEVO EditText para ingresar calorías quemadas por actividad física -->
+    <!-- EditText para ingresar calorías quemadas por actividad física -->
     <EditText
         android:id="@+id/et_calorias_quemadas"
         android:layout_width="0dp"
@@ -97,7 +119,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- NUEVO Botón para añadir actividad física -->
+    <!-- Botón para añadir actividad física -->
     <Button
         android:id="@+id/btn_añadir_actividad"
         android:layout_width="0dp"
